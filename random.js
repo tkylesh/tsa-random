@@ -8,23 +8,13 @@
 function getRandomArbitrary(min, max) {
   var arbNum = Math.random() * (max - min) + min;
   console.log(arbNum);
-  if (arbNum >= (max+min/2)){
-  	document.getElementById('leftContainer').classList.add('show');
-	  	if(document.getElementById('leftContainer').classList.contains('hide')){
-	  	document.getElementById('leftContainer').classList.remove('hide');
-	  	}
-  	document.getElementById('rightContainer'.classList.add('hide');
-  		if(document.getElementById('rightContainer').classList.contains('show')){
-	  	document.getElementById('leftContainer').classList.remove('show');
-	  	}
-
-  }else if(arbNum < (max+min/2)){
-  	document.getElementById('rightContainer').classList.toggle('show');
-  	  	if(document.getElementById('leftContainer').classList.contains('hide')){
-	  	document.getElementById('leftContainer').classList.remove('hide');
-	  	}
-  	document.getElementById('leftContainer').classList.toggle('hide');
-  }else{
-  	alert("There was an error");
+  var condition = ((max+min)/2);
+  if(arbNum >= condition){
+  	document.getElementById('leftContainer').classList.toggle('show');
+	  document.getElementById('leftContainer').classList.toggle('hide');
+  }
+  if(arbNum < condition){
+  	     document.getElementById('rightContainer').classList.toggle('show');
+  	  	  document.getElementById('rightContainer').classList.toggle('hide');
   }
 }
